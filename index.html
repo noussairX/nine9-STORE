@@ -1,26 +1,5 @@
 <script type="module" src="./nine-supabase-service.js"></script>
-<script type="module">
-  import { sb } from './nine-supabase-service.js';
 
-  // اختبار الاتصال فور فتح الصفحة
-  async function testConnection() {
-    try {
-      const { data, error } = await sb.from('orders').select('*').limit(1);
-      if (error) {
-        console.error("❌ الخطأ من قاعدة البيانات Supabase:", error.message);
-        alert("خطأ في Supabase: " + error.message);
-      } else {
-        console.log("✅ الاتصال بـ Supabase شغال 100% والمبيعات متصلة!", data);
-        alert("✅ المتجر مربوط بنجاح مع Supabase!");
-      }
-    } catch (err) {
-      console.error("❌ خطأ في ملف الخدمة أو المسار:", err);
-      alert("❌ خطأ: لم يتم التعرف على ملف الربط.");
-    }
-  }
-
-  testConnection();
-</script>
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>DASHBORD</title>
